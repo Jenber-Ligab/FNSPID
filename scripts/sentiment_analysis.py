@@ -133,3 +133,20 @@ class SentimentAnalyzer:
         
         word_freq = Counter(dict(common_keywords))
         SentimentAnalyzer.plot_wordcloud(word_freq)
+    def calculate_sentiment(df):
+        """
+        Calculate daily average sentiment scores.
+
+        Parameters:
+        - df (pd.DataFrame): DataFrame with sentiment columns and multi-index (Date, stock).
+
+        Returns:
+        - pd.DataFrame: DataFrame with daily average sentiment scores for each stock.
+        """
+        # Define sentiment columns
+        sentiment_cols = ['neg', 'neu', 'pos']
+        
+        # Group by Date and stock, then compute mean of sentiment columns
+        daily_sentiment = df.groupby(level=['Date', 'stock'])[sentiment_cols].mean().reset_index()
+        
+        return daily_sentiment
