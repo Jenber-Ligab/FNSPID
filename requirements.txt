@@ -14,3 +14,6 @@ collections
 re
 string
 wordcloud
+typing
+nltk.sentiment.vader
+matplotlib.pyplo
