@@ -5,9 +5,3 @@ statsmodels.api
 os
 zipfile
 re
-ltk.sentiment.vader
-wordcloud
-collections
-nltk.tokenize
-ltk.corpus
-nltk
