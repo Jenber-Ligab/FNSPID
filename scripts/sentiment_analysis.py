@@ -85,7 +85,7 @@ class SentimentAnalyzer:
         stop_words = set(stopwords.words('english'))
         words = [word for word in words if word not in stop_words]
         return ' '.join(words)
-    
+
     @staticmethod
     def get_common_keywords(headlines: pd.Series, top_n: int = 20) -> List[Tuple[str, int]]:
         """
@@ -133,6 +133,8 @@ class SentimentAnalyzer:
         
         word_freq = Counter(dict(common_keywords))
         SentimentAnalyzer.plot_wordcloud(word_freq)
+
+
     def calculate_sentiment(df):
         """
         Calculate daily average sentiment scores.
@@ -150,6 +152,7 @@ class SentimentAnalyzer:
         daily_sentiment = df.groupby(level=['Date', 'stock'])[sentiment_cols].mean().reset_index()
         
         return daily_sentiment
+
     def plot_sentiment(daily_sentiment, stock):
         """
         Plot sentiment scores for a given stock.
