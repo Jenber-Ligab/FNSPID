@@ -43,24 +43,7 @@ def articles_by_day_of_week(data: pd.DataFrame) -> pd.Series:
     data['day_of_week'] = data['date'].dt.day_name()
     
     return data['day_of_week'].value_counts()
-def articles_by_day_of_date(data: pd.DataFrame) -> pd.Series:
-     """
-     Analyze the distribution of articles by day of the date.
-     
-     Parameters:
-         data (pd.DataFrame): DataFrame containing the data.
-     
-     Returns:
-         pd.Series: Counts of articles by day of the date.
-     """
-     if not pd.api.types.is_datetime64_any_dtype(data['date']):
-         raise ValueError("The 'date' column must be in datetime format.")
-     
-     data['date'] = pd.to_datetime(data['date'])
-     date_counts = data['date'].value_counts().sort_index()
-     print("\nArticles Published Over Time:\n", date_counts.head())
-            
-     return date_counts  
+
 
 def articles_by_time(data: pd.DataFrame) -> pd.Series:
     """
@@ -81,6 +64,8 @@ def articles_by_time(data: pd.DataFrame) -> pd.Series:
     
     # Return counts of articles by hour of the day
     return data['time'].value_counts().sort_index()
+
+
 def extract_domains(email: str) -> str:
     """
     Extract domain from an email address.
