@@ -7,8 +7,8 @@ import streamlit as st
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts")))
 
 # Import functions from custom scripts
-from stockAnalysis import load_data, plot_stock_data, plot_rsi, plot_macd
-from sentimentAnalysis import SentimentAnalyzer as sa  # For sentiment analysis
+from stock_analysis import load_data, plot_stock_data, plot_rsi, plot_macd
+from sentiment_analysis import SentimentAnalyzer as sa  # For sentiment analysis
 
 
 # Helper function to construct file paths
@@ -69,7 +69,7 @@ def main():
         """
         <hr style="border:1px solid #ccc;">
         <p style="text-align:center; font-size:14px; color:grey;">
-        &copy; 2024 Developed by <strong>Amen Zelealem</strong>
+        &copy; 2024 Developed by <strong>Jenber Ligab</strong>
         </p>
         """,
         unsafe_allow_html=True,
