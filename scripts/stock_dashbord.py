@@ -69,7 +69,7 @@ def main():
         """
         <hr style="border:1px solid #ccc;">
         <p style="text-align:center; font-size:14px; color:grey;">
-        &copy; 2024 Developed by <strong>Amen Zelealem</strong>
+        &copy; 2024 Developed by <strong>Jenber Ligab</strong>
         </p>
         """,
         unsafe_allow_html=True,
