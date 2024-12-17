@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "./scripts"
+    ],
+    "cSpell.words": [
+        "macd",
+        "talib"
+    ]
+}
